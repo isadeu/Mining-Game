@@ -20,5 +20,6 @@ public class Quicksnad : MonoBehaviour {
 		transform.position += new Vector3 (0, 2f, 0); //jump
 		//thingthatHitMe.gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.left * -9, ForceMode2D.Impulse);
 		//thingthatHitMe.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (*-3,0), ForceMode2D.Impulse);
+		//this is what im having trouble with ^ 
 	}
 }
