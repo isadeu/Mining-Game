@@ -7,7 +7,7 @@ public class ChMovement : MonoBehaviour {
 	bool playerInTrigger = false;
 	npcsText currentNPC;
 	public float movement = .5f;
-	public bool jumping = false;
+	//public bool jumping = false;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //anythign for the rigidbody
@@ -16,22 +16,22 @@ public class ChMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey (KeyCode.D)) {
 			rb.AddForce (Vector2.right * movement, ForceMode2D.Impulse);
 			//transform.position += new Vector3 (.1f, 0, 0);//RIGHT position is stored on a vector3
 		}
 
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.A)) {
 			rb.AddForce (Vector2.left * 1, ForceMode2D.Impulse);
 			//transform.position -= new Vector3 (.1f, 0, 0);//LEFT ^but instead of minus bc its moving right not left
 		}
 
 
-		/*if (Input.GetKeyDown (KeyCode.UpArrow))
+		if (Input.GetKeyDown (KeyCode.W))
 		{
 			//rb.AddForce (Vector2.up * 5, ForceMode2D.Impulse);
 		transform.position += new Vector3 (0, 2f, 0); //jump
-		}*/
+		}
 
 
 
@@ -46,24 +46,24 @@ public class ChMovement : MonoBehaviour {
 		}
 	}
 
-	void Jumping (){
-			if (Input.GetKeyDown (KeyCode.UpArrow))
-		{
-				Jumping = true;
-			//rb.AddForce (Vector2.up * 5, ForceMode2D.Impulse);
-		transform.position += new Vector3 (0, 2f, 0); //jump
-		}
-			
-
-	}
+//	void Jumping (){
+//			if (Input.GetKeyDown (KeyCode.UpArrow))
+//		{
+//				Jumping = true;
+//			//rb.AddForce (Vector2.up * 5, ForceMode2D.Impulse);
+//		transform.position += new Vector3 (0, 2f, 0); //jump
+//		}
+//			
+//
+//	}
 
 	
-	void OnTriggerEnter2D (Collider2D p) {
-		if (p.gameObject.tag == "floor") {
-			jumping = (true);
-	
-		} 
-	}
+//	void OnTriggerEnter2D (Collider2D p) {
+//		if (p.gameObject.tag == "floor") {
+//			jumping = (true);
+//	
+//		} 
+//	}
 
 	void OnTriggerEnter2D (Collider2D c) {
 		if (c.gameObject.tag == "npcs") {

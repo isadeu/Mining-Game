@@ -13,6 +13,7 @@ public class npcsText : MonoBehaviour {
 		textStuff.SetActive (false);
 		npcText = textStuff.GetComponent<TextMesh> ();
 		npcText.text = "Hello? Anybody there?";
+		npcText.text = "pls";
 	}
 	
 	// Update is called once per frame
